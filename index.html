@@ -1,464 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Luke Sinclair — Agentic Communications & Analytics</title>
+  <meta charset="UTF-8" />
+  <title>Luke Sinclair — Agentic Communications & Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Agentic communications strategy, AI-powered analytics, and executive storytelling for modern organizations."
+  />
 
-<style>
-/* ---------------- */
-/* MOBILE-FIRST CSS */
-/* ---------------- */
+  <style>
+    :root {
+      --bg-page: #f4f5f7;
+      --bg-card: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      --brand: #111827;
+    }
 
-:root {
-  --text-dark: #111827;
-  --text-mid: #4b5563;
-  --bg-light: #f7fafc;
-  --bg-white: #ffffff;
-  --brand: #111827;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  line-height: 1.6;
-}
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-/* Layout */
-.container {
-  width: 100%;
-  max-width: 1020px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
 
-/* ---------------- */
-/* HEADER */
-/* ---------------- */
+    /* HEADER */
 
-.site-header {
-  background: var(--bg-white);
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1rem 0;
-}
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.9rem 0;
+    }
 
-.header-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+    .header-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-.logo-title {
-  font-weight: 650;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 1rem;
-}
+    .logo-title {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
 
-.logo-tagline {
-  font-size: 0.85rem;
-  color: var(--text-mid);
-}
+    .logo-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
 
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 0.2rem;
+    }
 
-.nav a {
-  text-decoration: none;
-  color: var(--text-dark);
-  font-size: 0.95rem;
-}
+    .nav a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
 
-.nav-cta {
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--brand);
-  font-size: 0.9rem;
-}
+    .nav-cta {
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--brand);
+      font-size: 0.9rem;
+    }
 
-/* ---------------- */
-/* HERO SECTION */
-/* ---------------- */
+    /* HERO */
 
-.hero {
-  padding: 2.5rem 0 2rem;
-}
+    .hero {
+      padding: 2.5rem 0 2.25rem;
+    }
 
-.hero-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-  align-items: flex-start;
-}
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
 
-.eyebrow {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  color: var(--text-mid);
-}
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
 
-.hero h1 {
-  font-size: 1.9rem;
-  line-height: 1.25;
-}
+    .hero h1 {
+      margin-top: 0.4rem;
+      font-size: 1.85rem;
+      line-height: 1.2;
+    }
 
-.hero-lead {
-  font-size: 1rem;
-  color: var(--text-mid);
-}
+    .hero-lead {
+      margin-top: 0.6rem;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
 
-.hero-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  width: 100%;
-}
+    .hero-actions {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
 
-.btn {
-  padding: 0.75rem 1.25rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1rem;
-}
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.98rem;
+      text-decoration: none;
+    }
 
-.btn.primary {
-  background: var(--brand);
-  color: white;
-}
+    .btn.primary {
+      background: var(--brand);
+      color: #ffffff;
+      border-color: var(--brand);
+    }
 
-.btn.ghost {
-  border: 1px solid #d1d5db;
-  color: var(--brand);
-}
+    .btn.ghost {
+      background: #ffffff;
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
 
-.hero-image-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+    .hero-image-wrap {
+      display: flex;
+      justify-content: center;
+    }
 
-.hero-image {
-  width: 160px;
-  height: 160px;
-  border-radius: 999px;
-  border: 3px solid #e5e7eb;
-  object-fit: cover;
-}
+    .hero-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      border: 3px solid var(--border-subtle);
+      object-fit: cover;
+      background: #ffffff;
+    }
 
-/* ---------------- */
-/* SERVICES */
-/* ---------------- */
+    /* SECTIONS */
 
-.section {
-  padding: 3rem 0;
-}
+    .section {
+      padding: 3rem 0;
+    }
 
-.section-header {
-  margin-bottom: 2rem;
-}
+    .section-header {
+      margin-bottom: 2rem;
+    }
 
-.section-header h2 {
-  font-size: 1.5rem;
-}
+    .section-header h2 {
+      font-size: 1.45rem;
+    }
 
-.section-intro {
-  color: var(--text-mid);
-  margin-top: 0.5rem;
-}
+    .section-intro {
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
 
-.service-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
+    /* SERVICES */
 
-.service-card {
-  background: var(--bg-white);
-  border-radius: 0.8rem;
-  padding: 1.25rem;
-  border: 1px solid #e5e7eb;
-}
+    .services {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
 
-.service-card-alt {
-  background: var(--brand);
-  color: white;
-}
+    .service-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
 
-.service-card h3 {
-  margin-bottom: 0.4rem;
-  font-size: 1.05rem;
-}
+    .service-card {
+      background: #f9fafb;
+      border-radius: 0.9rem;
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem 1.15rem;
+    }
 
-.service-card p {
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
-}
+    .service-card-alt {
+      background: var(--brand);
+      color: #ffffff;
+      border-color: #020617;
+    }
 
-.service-card ul {
-  padding-left: 1.2rem;
-  font-size: 0.9rem;
-}
+    .service-card h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.02rem;
+    }
 
-/* ---------------- */
-/* ABOUT */
-/* ---------------- */
+    .service-card p {
+      font-size: 0.93rem;
+      margin-bottom: 0.55rem;
+      color: inherit;
+    }
 
-.about-text p {
-  color: var(--text-mid);
-  margin-bottom: 0.9rem;
-}
+    .service-card ul {
+      font-size: 0.9rem;
+      padding-left: 1.1rem;
+    }
 
-.about-text ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1.1rem;
-}
+    /* ABOUT */
 
-/* ---------------- */
-/* CONTACT */
-/* ---------------- */
+    .about-inner {
+      max-width: 50rem;
+    }
 
-.contact-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+    .about-text p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      margin-bottom: 0.9rem;
+    }
 
-.contact-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
+    .about-text ul {
+      padding-left: 1.1rem;
+      font-size: 0.93rem;
+      margin-bottom: 1.1rem;
+    }
 
-.contact-email {
-  text-decoration: none;
-  color: var(--text-dark);
-}
+    /* CONTACT */
 
-/* ---------------- */
-/* FOOTER */
-/* ---------------- */
+    .contact {
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+    }
 
-.site-footer {
-  padding: 1.25rem 0;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-mid);
-  background: #f9fafb;
-}
+    .contact-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
 
-/* ---------------- */
-/* DESKTOP OVERRIDES */
-/* ---------------- */
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+      max-width: 260px;
+    }
 
-@media (min-width: 760px) {
+    .contact-cta {
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
-  .header-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+    /* FOOTER */
 
-  .hero-inner {
-    flex-direction: row;
-    align-items: center;
-  }
+    .site-footer {
+      padding: 1.25rem 0 1.6rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
 
-  .hero-image {
-    width: 240px;
-    height: 240px;
-  }
+    /* TABLET / DESKTOP OVERRIDES */
 
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+    @media (min-width: 720px) {
+      .header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-  .contact-inner {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+      .nav {
+        margin-top: 0;
+      }
 
-  .hero-actions {
-    flex-direction: row;
-    width: auto;
-  }
-}
+      .hero {
+        padding: 3.25rem 0 2.75rem;
+      }
 
-</style>
+      .hero-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-actions {
+        flex-direction: row;
+        width: auto;
+      }
+
+      .btn {
+        width: auto;
+      }
+
+      .hero-image {
+        width: 210px;
+        height: 210px;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .contact-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .contact-actions {
+        align-items: flex-start;
+      }
+    }
+
+    /* SMALL-PHONE TWEAKS */
+
+    @media (max-width: 400px) {
+      .logo-title {
+        font-size: 0.95rem;
+      }
+
+      .hero h1 {
+        font-size: 1.65rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <span class="logo-title">Luke Sinclair</span>
-      <span class="logo-tagline">Agentic Communications & Analytics</span>
-    </div>
-    <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3wkqyLCiFBkqpRKpLUXhnm9ptmroe2bz-cqbtbRtPj-9VxrTruR4LtfXxB06Rn-wJlq3IFipNy" class="nav-cta" target="_blank">Book</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <p class="eyebrow">Agentic systems · AI · Executive storytelling</p>
-      <h1>Turning communications into an intelligent system — not just a channel.</h1>
-      <p class="hero-lead">
-        I help enterprise communications & HR teams design <strong>agentic analytics</strong>, integrate <strong>AI workflows</strong>, and build <strong>executive-ready narratives</strong>.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn primary" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3wkqyLCiFBkqpRKpLUXhnm9ptmroe2bz-cqbtbRtPj-9VxrTruR4LtfXxB06Rn-wJlq3IFipNy" target="_blank">Schedule intro</a>
-        <a class="btn ghost" href="#services">Explore services</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-title">LUKE SINCLAIR</span>
+        <span class="logo-tagline">Agentic Communications &amp; Analytics</span>
       </div>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a
+          href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3wkqyLCiFBkqpRKpLUXhnm9ptmroe2bz-cqbtbRtPj-9VxrTruR4LtfXxB06Rn-wJlq3IFipNy"
+          class="nav-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book
+        </a>
+      </nav>
     </div>
+  </header>
 
-    <div class="hero-image-wrap">
-      <img src="luke-headshot.jpg" class="hero-image" alt="Luke Sinclair headshot">
-    </div>
-  </div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Agentic systems · AI · Executive storytelling</p>
+          <h1>Where analytics, AI and communications work together.</h1>
+          <p class="hero-lead">
+            I help enterprise communications &amp; HR teams design
+            <strong>agentic analytics</strong>, integrate
+            <strong>AI workflows</strong>, and build
+            <strong>executive-ready narratives</strong>.
+          </p>
 
-<section id="services" class="section services">
-  <div class="container">
-    <div class="section-header">
-      <p class="eyebrow">Services</p>
-      <h2>Where AI, agents & communications meet.</h2>
-      <p class="section-intro">From agentic dashboards to AI storytelling workflows — I help comms leaders modernize their analytics and reporting.</p>
-    </div>
+          <div class="hero-actions">
+            <a
+              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3wkqyLCiFBkqpRKpLUXhnm9ptmroe2bz-cqbtbRtPj-9VxrTruR4LtfXxB06Rn-wJlq3IFipNy"
+              class="btn primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Schedule intro
+            </a>
+            <a href="#services" class="btn ghost">
+              Explore services
+            </a>
+          </div>
+        </div>
 
-    <div class="service-grid">
-
-      <div class="service-card">
-        <h3>Agentic Analytics Systems</h3>
-        <p>AI-enabled dashboards that surface narrative-ready insights.</p>
-        <ul>
-          <li>Dashboard concepts</li>
-          <li>Signal integration</li>
-          <li>Automated reporting</li>
-          <li>Narrative prompts</li>
-        </ul>
+        <div class="hero-image-wrap">
+          <img
+            src="luke-headshot.jpg"
+            alt="Headshot of Luke Sinclair"
+            class="hero-image"
+          />
+        </div>
       </div>
+    </section>
 
-      <div class="service-card">
-        <h3>Unified Comms Measurement</h3>
-        <p>Clarity across channels, metrics & leadership reporting.</p>
-        <ul>
-          <li>KPI frameworks</li>
-          <li>Measurement taxonomies</li>
-          <li>Cadences & governance</li>
-          <li>Exec-ready readouts</li>
-        </ul>
+    <!-- SERVICES -->
+    <section id="services" class="section services">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Services</p>
+          <h2>Where AI, agents &amp; communications meet.</h2>
+          <p class="section-intro">
+            From agentic dashboards to AI storytelling workflows — I help comms leaders
+            modernize their analytics and reporting.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Agentic Analytics Systems</h3>
+            <p>AI-enabled dashboards that surface narrative-ready insights.</p>
+            <ul>
+              <li>Dashboard concepts &amp; patterns</li>
+              <li>Signal integration across tools</li>
+              <li>Automated reporting &amp; alerts</li>
+              <li>Narrative prompts for comms teams</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Unified Comms Measurement</h3>
+            <p>Clarity across channels, metrics &amp; leadership reporting.</p>
+            <ul>
+              <li>KPI frameworks &amp; taxonomies</li>
+              <li>Measurement storylines leaders understand</li>
+              <li>Reporting cadences &amp; governance</li>
+              <li>Executive-ready readouts</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>AI Storytelling &amp; Reporting</h3>
+            <p>Workflows that accelerate narrative craft without losing nuance.</p>
+            <ul>
+              <li>AI-assisted summaries &amp; briefs</li>
+              <li>Narrative stress-testing &amp; scenarioing</li>
+              <li>Prompt libraries &amp; guardrails</li>
+              <li>Playbooks &amp; team workshops</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Change &amp; Adoption Advisory</h3>
+            <p>Operating models for AI in comms teams.</p>
+            <ul>
+              <li>Role clarity &amp; ownership</li>
+              <li>Success metrics &amp; feedback loops</li>
+              <li>AI operating rhythms</li>
+              <li>Executive enablement &amp; comms packs</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Leadership &amp; HR Comms</h3>
+            <p>Data-informed narratives for people, culture &amp; change.</p>
+            <ul>
+              <li>Town halls &amp; all-hands stories</li>
+              <li>Employee experience metrics &amp; insights</li>
+              <li>Change narratives and manager toolkits</li>
+              <li>People data stories &amp; dashboards</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-card-alt">
+            <h3>Strategic Advisory Partner</h3>
+            <p>A thought partner for exec comms teams navigating AI &amp; analytics.</p>
+            <ul>
+              <li>Org design &amp; capability building</li>
+              <li>Roadmaps for AI &amp; agentic tooling</li>
+              <li>Measurement strategies for key initiatives</li>
+              <li>Private counsel on comms &amp; data</li>
+            </ul>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="service-card">
-        <h3>AI Storytelling & Reporting</h3>
-        <p>Workflows that accelerate narrative craft without losing nuance.</p>
-        <ul>
-          <li>AI-assisted summaries</li>
-          <li>Narrative stress-testing</li>
-          <li>Prompt libraries</li>
-          <li>Playbooks & workshops</li>
-        </ul>
+    <!-- ABOUT -->
+    <section class="section about">
+      <div class="container about-inner">
+        <div class="about-text">
+          <p class="eyebrow">About</p>
+          <h2>Hi, I’m Luke.</h2>
+          <p>
+            I’m a communications strategist working at the intersection of measurement,
+            analytics and AI-enabled storytelling. Over the past 15+ years I’ve supported
+            teams at Microsoft, LinkedIn, American Express and SWOOP Analytics.
+          </p>
+          <p>
+            I help teams design systems that:
+          </p>
+          <ul>
+            <li>Tell leaders what’s working — and what isn’t</li>
+            <li>Reduce time spent on manual reporting and slides</li>
+            <li>Bring AI into the craft of communications in a safe, thoughtful way</li>
+            <li>Connect people to purpose, performance and culture</li>
+          </ul>
+          <p>
+            If you’re exploring agentic dashboards, AI reporting workflows or unified
+            comms measurement, I can help you move from scattered tools to a coherent,
+            intelligent comms system.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="service-card">
-        <h3>Change & Adoption Advisory</h3>
-        <p>Operating models for AI in comms teams.</p>
-        <ul>
-          <li>Role clarity</li>
-          <li>Success metrics</li>
-          <li>AI operating rhythms</li>
-          <li>Executive enablement</li>
-        </ul>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container contact-inner">
+        <div>
+          <p class="eyebrow">Let’s talk</p>
+          <h2>Exploring what AI &amp; agents mean for your comms team?</h2>
+          <p>
+            If you’re looking for a partner to help design agentic analytics, modernize
+            measurement, or bring AI into your communications practice, I’d love to connect.
+          </p>
+          <p class="contact-cta">
+            You can book time directly or reach out via LinkedIn.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a
+            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3wkqyLCiFBkqpRKpLUXhnm9ptmroe2bz-cqbtbRtPj-9VxrTruR4LtfXxB06Rn-wJlq3IFipNy"
+            class="btn primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book intro chat
+          </a>
+          <a
+            href="https://www.linkedin.com/in/lukecsinclair"
+            class="btn ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Connect on LinkedIn
+          </a>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="service-card">
-        <h3>Leadership & HR Comms</h3>
-        <p>Data-informed narratives for people, culture & change.</p>
-        <ul>
-          <li>Town halls & all-hands</li>
-          <li>EX metrics</li>
-          <li>Change narratives</li>
-          <li>People insights</li>
-        </ul>
-      </div>
+  <footer class="site-footer">
+    © <span id="year"></span> Luke Sinclair · Manor Trading Company Inc.
+  </footer>
 
-      <div class="service-card service-card-alt">
-        <h3>Strategic Advisory</h3>
-        <p>A partner for exec comms teams navigating AI & analytics.</p>
-        <ul>
-          <li>Org design thinking</li>
-          <li>Roadmaps for AI</li>
-          <li>Leadership measurements</li>
-          <li>Private counsel</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section about">
-  <div class="container about-inner">
-    <div class="about-text">
-      <p class="eyebrow">About</p>
-      <h2>Hi, I’m Luke.</h2>
-      <p>I’m a communications strategist working at the intersection of measurement, analytics & AI-enabled storytelling. I’ve supported Microsoft, LinkedIn, American Express & SWOOP Analytics over a 15-year career.</p>
-
-      <p>I help teams design systems that:</p>
-      <ul>
-        <li>Tell leaders what’s working (and what isn’t)</li>
-        <li>Reduce manual reporting time</li>
-        <li>Bring AI into the craft of comms safely</li>
-        <li>Connect people to purpose, performance & culture</li>
-      </ul>
-
-      <p>If you're exploring agentic dashboards, AI reporting workflows, or unified measurement, I can help.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section contact">
-  <div class="container contact-inner">
-    <div>
-      <p class="eyebrow">Let’s talk</p>
-      <h2>Exploring what AI & agents mean for your comms team?</h2>
-      <p>Feel free to reach out or book time directly.</p>
-    </div>
-
-    <div class="contact-actions">
-      <a class="btn primary" target="_blank" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3wkqyLCiFBkqpRKpLUXhnm9ptmroe2bz-cqbtbRtPj-9VxrTruR4LtfXxB06Rn-wJlq3IFipNy">Book intro chat</a>
-      <a class="btn ghost" target="_blank" href="https://www.linkedin.com/in/lukecsinclair">Connect on LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  © <span id="yr"></span> Luke Sinclair · Manor Trading Company Inc.
-</footer>
-
-<script>
-document.getElementById("yr").textContent = new Date().getFullYear();
-</script>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
